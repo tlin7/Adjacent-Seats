@@ -1,0 +1,19 @@
+To Do List:
+
+Week 1 (1/9 to 1/15):
+	Wednesday - Sunday:
+		--Get the flow chart done
+		--Make a barebones Units.java and Terain.java  
+		  that can be instantiated.
+		--Fill terrainLayer and unitLayer in Woo.java with Terrain and Units objects
+		--Woo.java should be able to print out the terrainlayer and unitLayer 			  variables
+
+
+Week 2 (1/16 to 1/23): 
+	Monday - Wednesday:
+		-- Program the movement and and attacking methods of units
+		-- Program start(), runTurn(), and playerParser()
+		-- Test if we can play a basic game with general Units.
+		-- Program Land.java and Sea.java so they can be instantiated
+		-- Restrict the movement ability of infantry to only travel on land
+		-- Make Navy.java work so that it can only travel on water
