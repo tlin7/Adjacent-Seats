@@ -6,13 +6,13 @@ Week 1 (1/9 to 1/15):
 		--Make a barebones Units.java and Terain.java  
 		  that can be instantiated.
 		--Fill terrainLayer and unitLayer in Woo.java with Terrain and Units objects
-		--Woo.java should be able to print out the terrainlayer and unit variables
+		--Woo.java should be able to print out the terrainlayer and unitlayer
+		-- Program the movement method of Units.
+		-- Program start(), runTurn(), and playerParser() to work with one player and one unit
 
 
 Week 2 (1/16 to 1/23): 
 	Monday - Wednesday:
-		-- Program the movement method of Units.
-		-- Program start(), runTurn(), and playerParser()
 		-- program the attack method of Units.
 		-- Test if we can play a basic game with instances of Units.
 		-- Program Land.java and Sea.java so they can be instantiated
