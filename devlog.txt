@@ -6,23 +6,6 @@ pd 5
 ---------------------
 Turn based military sim
 
-
-Suggested usage: 
-* Replace all fields, angle brackets included, with specified info.
-  eg, pd <pd#> --> pd 3
-* Delete these instructions once all teammates understand usage.
-
-devlog--
-Use keyboard shortcut to jump to end,
- replicate entry template,
- modify appropriately.
-
-zone of reflection--
-Flesh out each category whenever necessary, appropriate.
- Need not be fully filled in until end of project,
- but best done as you go along.
-
-
 /////////// Zone of Reflection \\\\\\\\\\\
 ------------------------------------------
 OBSTACLES OVERCOME
@@ -57,11 +40,27 @@ tales of wisdom gained...
    \:\/.:| |\:\____/\\ ..::/ / \:\/___/\\:\_\ \ \\:\_\ \ \ 
     \____/_/ \_____\/ \___/_(   \_____\/ \_____\/ \_____\/ 
 ==============================================================
+2017-01-05
+--------------------------------------------------------------
+Jonathan, Noah, Thomas:: Created proposal.pdf.
 
+2017-01-09
+--------------------------------------------------------------
+Jonathan, Noah, Thomas:: Edited proposal. Created UML diagram.
+
+2017-01-10
+--------------------------------------------------------------
+Jonathan, Noah, Thomas:: Created flowchart. Created todo.txt
 
 2017-01-11
 --------------------------------------------------------------
-Jonathan Quang :: Made a barebones Tiles.java and Units.java;
-Noah Tang :: Began developing the driver file
-Thomas Lin :: Updated and uploaded flowchart to repo. Also brought over the gitignore file
+Jonathan:: Made a barebones Tiles.java and Units.java;
+Noah:: Began developing the driver file
+Thomas:: Updated and uploaded flowchart to repo. Also brought over the gitignore file
+
+2017-01-12
+--------------------------------------------------------------
+Jonathan::
+Noah::
+Thomas:: Polished devlog.
 ==============================================================
