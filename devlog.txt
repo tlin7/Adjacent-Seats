@@ -59,9 +59,9 @@ tales of wisdom gained...
 ==============================================================
 
 
-yyyy-mm-dd
+2017-01-11
 --------------------------------------------------------------
-<Member> :: <Thing member did.>
-<Member> :: <Thing member did.>
-<Member> :: <Thing member did.>
+Jonathan Quang :: Made a barebones Tiles.java and Units.java;
+Noah Tang :: Began developing the driver file
+Thomas Lin :: Updated and uploaded flowchart to repo. Also brought over the gitignore file
 ==============================================================
