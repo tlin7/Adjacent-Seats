@@ -17,8 +17,35 @@ public class Unit extends Tiles{
     public int attack(Unit beingAttacked){
 	return 0;
     }
-    public int move(int direction){
-	return 0;
+    public void move(int travelDir, int row, int col, Unit[][] inputArray){
+	Unit storedUnit = inputArray[row][col];
+	inputArray[row][col]=null;
+	if (travelDir==0){
+	    inputArray[row-1][col-1] =storedUnit;
+	}
+	else if(travelDir==1){
+	    inputArray[row - 1][col]=storedUnit;
+	}
+	else if (travelDir==2){
+	    inputArray[row-1][col+1]=storedUnit;
+	}
+	else if (travelDir==3){
+	    inputArray[row][col+1]=storedUnit;
+	}
+	else if (travelDir==4){
+	    inputArray[row+1][col+1]=storedUnit;
+	}
+	else if (travelDir==5){
+	    inputArray[row+1][col]=storedUnit;
+	}
+	else if (travelDir==6){
+	    inputArray[row+1][col-1]=storedUnit;
+	}
+	else if (travelDir==7){
+	    inputArray[row][col-1]=storedUnit;
+	}
+	    
+	
     }
     public String getSymbol(){
 	return this.symbol;
