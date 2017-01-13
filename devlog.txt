@@ -60,7 +60,7 @@ Thomas:: Updated and uploaded flowchart to repo. Also brought over the gitignore
 
 2017-01-12
 --------------------------------------------------------------
-Jonathan::
-Noah::
-Thomas:: Polished devlog.
+Jonathan:: Terrain class symbol randomization. todo.txt update.
+Noah:: Added cs1 package, worked on menu system for Woo. Implemented basic generation of random battlefield.
+Thomas:: Polished devlog. Created subclasses for Unit and for Terrain.
 ==============================================================
