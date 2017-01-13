@@ -1,9 +1,10 @@
-public Navy extends Unit{
+public class Navy extends Unit{
     public Navy(){
-	int strength = 10;
-	int weapon = 10;
-	String[]viableTerrain = "";
-	int attackRange = 10;
-	int moveRange = 1;
+	strength = 10;
+	weapon = 10;
+	viableTerrain = new String[1];
+	attackRange = 10;
+	moveRange = 1;
+	symbol = "^";
     }
 }

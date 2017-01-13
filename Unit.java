@@ -4,9 +4,9 @@ public class Unit extends Tiles{
     protected int weapon;
     protected String[] viableTerrain;
     protected int attackRange;
-    protected int moveange;
+    protected int moveRange;
     protected String name;
-    protected String symbol = "%";
+    protected String symbol;
 
     public String getName(){
 	return "";
