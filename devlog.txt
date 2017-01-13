@@ -60,7 +60,15 @@ Thomas:: Updated and uploaded flowchart to repo. Also brought over the gitignore
 
 2017-01-12
 --------------------------------------------------------------
-Jonathan:: Terrain class symbol randomization. todo.txt update.
+Jonathan:: Terrain class symbol randomization. todo.txt update. Wrote a move method for units.
 Noah:: Added cs1 package, worked on menu system for Woo. Implemented basic generation of random battlefield.
 Thomas:: Polished devlog. Created subclasses for Unit and for Terrain.
 ==============================================================
+
+yyyy-mm-dd
+--------------------------------------------------------------
+<Member> :: <Thing member did.>
+<Member> :: <Thing member did.>
+<Member> :: <Thing member did.>
+==============================================================
+
