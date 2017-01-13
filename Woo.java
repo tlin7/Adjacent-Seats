@@ -21,12 +21,14 @@ public class Woo{
 	    choice = input.nextLine();
 	    if (choice.equals("1")){ start(); break;}
 	    if (choice.equals("2")){ manual(); choice = "";}
-	    if (choice.equals("3")){ return;}
 	    else{choice = "";}
 	}
 
-	printField();
-	input.nextLine();
+	while(true){
+	    runTurn();
+	}
+
+
 	
     }
 
@@ -67,14 +69,21 @@ public class Woo{
     }
 
     public static void runTurn(){
+	printField();
+	System.out.print("What is your command?\t");
+	playerParser( input.nextLine() );
+	
     }
 
     public static void menu(){
 	System.out.println("-=. AS Historical Military Simulations .=-");
-	System.out.println("Pick one: \n 1.Play Random\n 2.Manual\n 3.Exit");
+	System.out.println("Pick one: \n 1.Play Random\n 2.Manual");
     }
 
-    public static void playerParser(){
+    public static void playerParser(String com){
+	if(com.length() == 0){
+	    return;}
+
     }
 
     public static void printField(){
