@@ -7,6 +7,11 @@ public class Unit extends Tiles{
     protected int moveRange;
     protected String name;
     protected String symbol;
+    protected String owner;
+
+    public String getOwner(){
+	return owner;
+    }
 
     public String getName(){
 	return "";

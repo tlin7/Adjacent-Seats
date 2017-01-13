@@ -7,4 +7,9 @@ public class Infantry extends Unit{
 	moveRange = 1;
 	symbol = "%";
     }
+
+    public Infantry(String newOwner){
+	this();
+	owner = newOwner;
+    }
 }

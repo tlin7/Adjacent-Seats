@@ -7,4 +7,9 @@ public class Navy extends Unit{
 	moveRange = 1;
 	symbol = "^";
     }
+
+    public Navy(String newOwner){
+	this();
+	owner = newOwner;
+    }
 }
