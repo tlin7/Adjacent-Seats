@@ -1,21 +1,25 @@
-import cs1.Keyboard;
+import java.util.Scanner;
 
 public class Woo{
 
     //contains the FIELD of TERRAIN tiles
     public static Terrain[][] field;
     public static Unit[][] units;
+    public static Scanner input = new Scanner(System.in);
+  
     
     //main
     public static void main(String[] args){
+
 	field = new Terrain[20][20];
-	int choice = 0;
-	while( choice == 0){
+	String choice = "";
+	while( choice.equals("")){
 	    clear();
 	    menu();
-	    choice = Keyboard.readInt();
-	    if (choice == 1){ start();}
-	    if (choice == 2){ manual(); choice = 0;}
+	    choice = input.nextLine();
+	    if (choice.equals("1")){ start();}
+	    if (choice.equals("2")){ manual(); choice = "";}
+	    else{choice = "";}
 	}
 	
     }
@@ -39,8 +43,8 @@ public class Woo{
     public static void manual(){
 	clear();
 	System.out.println("MANUAL\nEnter anything to close the manual.");
+	input.nextLine();
 
-	Keyboard.readStringAny();
     }
 
     public static void runTurn(){
