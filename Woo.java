@@ -7,7 +7,12 @@ public class Woo{
     public static Unit[][] units;
     public static Scanner input = new Scanner(System.in);
     public static String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
     public static String[] playerNames = {"one","two"};
+    public static int current = 0;
+
+    public static String message = "Welcome.";
+    public static String[] directions = {"NORTHWEST", "NORTH", "NORTHEAST", "EAST", "SOUTHEAST", "SOUTH", "SOUTHWEST", "WEST"};
   
     
     //main
@@ -102,85 +107,41 @@ public class Woo{
 	    return false;
 	}
 
-	//TRAVEL DIRECTION: NORTH
-	if(com.length() >= 8
-	   && com.substring(4,com.length()).toUpperCase().equals("NORTH")
-	   ){
-	    int x = 0;
-	    int y = Integer.parseInt(com.substring(1,3));
-	    for(int i = 0; i < alphabet.length(); i++){
-		if( alphabet.substring(i,i+1).equals(com.substring(0,1).toUpperCase()) ){
-		    x = i;
+	//TRAVEL DIRECTION: ANY, see directions list at top. Will loop and check 4 each.
+	for( int count = 0; count <= 8; count++){
+	    if(com.length() >= 8
+	       && com.substring(4,com.length()).toUpperCase().equals( directions[count] )
+	       ){
+		int x = 0;
+		int y = Integer.parseInt(com.substring(1,3));
+		for(int i = 0; i < alphabet.length(); i++){
+		    if( alphabet.substring(i,i+1).equals(com.substring(0,1).toUpperCase()) ){
+			x = i;
+		    }
+		}
+		//	    System.out.println(x + "-" + y);
+		//	    input.nextLine();
+		if( !(0<=x && x<field.length) || !(0<=y && y<field[0].length) || units[x][y] == null){
+		    message = "No unit detected there, sir! Your order couldn't be carried out.";
+		    return false;}
+		else{
+		    units[x][y].move(count, x, y, units);
+		    message = "Ready for orders.";
+		    return true;
 		}
 	    }
-	    //	    System.out.println(x + "-" + y);
-	    //	    input.nextLine();
-	    if( units[x][y] == null)
-		return false;
-	    else{
-		units[x][y].move(1, x, y, units);
-		return true;
-	    }
 	}
-	//TRAVEL DIRECTION: EAST
-	if(com.length() >= 8
-	   && com.substring(4,com.length()).toUpperCase().equals("EAST")
-		){
-	    int x = 0;
-	    int y = Integer.parseInt(com.substring(1,3));
-	    for(int i = 0; i < alphabet.length(); i++){
-		if( alphabet.substring(i,i+1).equals(com.substring(0,1).toUpperCase()) ){
-		    x = i;
-		}
-	    }
-	    if( units[x][y] == null)
-		return false;
-	    else{
-		units[x][y].move(3, x, y, units);
-		return true;
-	    }
-	}
-	//TRAVEL DIRECTION: SOUTH
-	if(com.length() >= 8
-	   && com.substring(4,com.length()).toUpperCase().equals("SOUTH")
-		){
-	    int x = 0;
-	    int y = Integer.parseInt(com.substring(1,3));
-	    for(int i = 0; i < alphabet.length(); i++){
-		if( alphabet.substring(i,i+1).equals(com.substring(0,1).toUpperCase()) ){
-		    x = i;
-		}
-	    }
-	    if( units[x][y] == null)
-		return false;
-	    else{
-		units[x][y].move(5, x, y, units);
-		return true;
-	    }
-	}
-	//TRAVEL DIRECTION: WEST
-	if(com.length() >= 8
-	   && com.substring(4,com.length()).toUpperCase().equals("WEST")
-		){
-	    int x = 0;
-	    int y = Integer.parseInt(com.substring(1,3));
-	    for(int i = 0; i < alphabet.length(); i++){
-		if( alphabet.substring(i,i+1).equals(com.substring(0,1).toUpperCase()) ){
-		    x = i;
-		}
-	    }
-	    if( units[x][y] == null)
-		return false;
-	    else{
-		units[x][y].move(7, x, y, units);
-		return true;
-	    }
-	}
+	message = "Not too sure we understood that.";
 	return false;
-    }
+	}
 
+    //PRINT THE BATTLESCREEN
     public static void printField(){
+	int messageWidth = 74 - field[0].length;
 	String toPrint = " ";
+	
+	message = "Communications for " + playerNames[current] + ": " + message;
+	//ADD THE numbering to the top of the printjob
 	for(int x = 0; x < field[0].length;x++){
 	    toPrint += (int)(x / 10);
 	}
@@ -190,6 +151,7 @@ public class Woo{
 	}
 	toPrint += "\n";
 
+	//now add the actual grid:
 	for(int x = 0; x < field.length; x++){
 	    toPrint += alphabet.substring(x,x+1);
 	    for(int y = 0; y < field[0].length;y++){
@@ -198,6 +160,12 @@ public class Woo{
 		else{
 		    toPrint += units[x][y].getSymbol();}
 	    }
+	    if (x*messageWidth+messageWidth <= message.length() )
+		toPrint += "   " +  message.substring(x*messageWidth, x*messageWidth+messageWidth   )   ;
+	    else if (x*messageWidth+messageWidth < message.length() + messageWidth){
+		toPrint += "   " +  message.substring(x*messageWidth)   ;
+	    }
+	    
 	    toPrint += "\n";
 	}
 	System.out.println(toPrint);
