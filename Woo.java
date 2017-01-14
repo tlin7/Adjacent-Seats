@@ -69,6 +69,7 @@ public class Woo{
 	input.nextLine();
 	clear();
 	System.out.println("\nSpecifics:\nHow to specify a particular unit: By letter and number. First comes the letter, which specifies ROW. (A-Z). Then comes number, which specifies column (0-80). All numbers are written vertically due to space issues.\nFor example, the number 54 would be written above its respective column like this:\n5\n4");
+	System.out.println("\nCommands:\nDirection: NORTH, EAST, SOUTH, WEST.\nKeep in mind commands are CASE SENSITIVE.");
 	System.out.println("Page 2");
 
 	System.out.println("END MANUAL, <ENTER> to exit.");
@@ -103,7 +104,7 @@ public class Woo{
 
 	//TRAVEL DIRECTION: NORTH
 	if(com.length() >= 8
-	   && com.substring(4,9).toUpperCase().equals("NORTH")
+	   && com.substring(4,com.length()).toUpperCase().equals("NORTH")
 	   ){
 	    int x = 0;
 	    int y = Integer.parseInt(com.substring(1,3));
@@ -120,7 +121,60 @@ public class Woo{
 		units[x][y].move(1, x, y, units);
 		return true;
 	    }
-
+	}
+	//TRAVEL DIRECTION: EAST
+	if(com.length() >= 8
+	   && com.substring(4,com.length()).toUpperCase().equals("EAST")
+		){
+	    int x = 0;
+	    int y = Integer.parseInt(com.substring(1,3));
+	    for(int i = 0; i < alphabet.length(); i++){
+		if( alphabet.substring(i,i+1).equals(com.substring(0,1).toUpperCase()) ){
+		    x = i;
+		}
+	    }
+	    if( units[x][y] == null)
+		return false;
+	    else{
+		units[x][y].move(3, x, y, units);
+		return true;
+	    }
+	}
+	//TRAVEL DIRECTION: SOUTH
+	if(com.length() >= 8
+	   && com.substring(4,com.length()).toUpperCase().equals("SOUTH")
+		){
+	    int x = 0;
+	    int y = Integer.parseInt(com.substring(1,3));
+	    for(int i = 0; i < alphabet.length(); i++){
+		if( alphabet.substring(i,i+1).equals(com.substring(0,1).toUpperCase()) ){
+		    x = i;
+		}
+	    }
+	    if( units[x][y] == null)
+		return false;
+	    else{
+		units[x][y].move(5, x, y, units);
+		return true;
+	    }
+	}
+	//TRAVEL DIRECTION: WEST
+	if(com.length() >= 8
+	   && com.substring(4,com.length()).toUpperCase().equals("WEST")
+		){
+	    int x = 0;
+	    int y = Integer.parseInt(com.substring(1,3));
+	    for(int i = 0; i < alphabet.length(); i++){
+		if( alphabet.substring(i,i+1).equals(com.substring(0,1).toUpperCase()) ){
+		    x = i;
+		}
+	    }
+	    if( units[x][y] == null)
+		return false;
+	    else{
+		units[x][y].move(7, x, y, units);
+		return true;
+	    }
 	}
 	return false;
     }
