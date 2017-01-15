@@ -32,8 +32,11 @@ public class Woo{
 	    else{choice = "";}
 	}
 
+	int turns = 0;
 	while(true){
+	    current = turns % 2;
 	    runTurn();
+	    turns++;
 	}
 
 
@@ -42,8 +45,20 @@ public class Woo{
 
     //intializes a new random field and some new random units
     public static void start(){
+
+	clear();
+	System.out.println("Welcome to AS Military, you have selected a RANDOM game.");
+	System.out.println("Please check the manual for any questions you might have.\n");
+	System.out.print("First player, please enter a name:\n::");
+	playerNames[0]=input.nextLine();
+	System.out.println(playerNames[0] + " registered as first player.");
+	System.out.print("Second player, please enter a name:\n::");
+	playerNames[1]=input.nextLine();
+	System.out.println(playerNames[1] + " registered as second player.\n");
+	System.out.println("<enter> to proceed.");
 	
-	//generate a random field
+	
+	//generate a random field =========================================
 	for( int x = 0; x < field.length; x++){
 	    for( int y = 0; y < field[0].length; y++){
 		int randchoice = (int)(Math.random()*2); //<== INSERT number of choices
@@ -54,11 +69,14 @@ public class Woo{
 		//if (randchoice == 2)
 	    }
 	}
-
 	//generate a couple of units
 	units[ (int) (Math.random() * field.length)  ][ (int) (Math.random()*field[0].length) ] = new Infantry("one");
 	units[ (int) (Math.random() * field.length)  ][ (int) (Math.random()*field[0].length) ] = new Infantry("two");
 	units[ (int) (Math.random() * field.length)  ][ (int) (Math.random()*field[0].length) ] = new Infantry("two");
+
+	// END random generation ==========================================
+
+	
     }
 
     public static void manual(){
@@ -83,11 +101,13 @@ public class Woo{
     }
 
     public static void runTurn(){
-	clear();
-	printField();
-	System.out.print("What is your command?\t");
-	playerParser( input.nextLine() );
-	
+	boolean passTurn = false;
+	while( passTurn == false){
+	    clear();
+	    printField();
+	    System.out.print("What is your command?\t");
+	    passTurn = playerParser( input.nextLine());
+	}
     }
 
     public static void menu(){
@@ -101,14 +121,16 @@ public class Woo{
 	if(com.length() == 0){
 	    return false;}
 
-	if(com.length() >= 4 
-	   && com.substring(0,4).toUpperCase().equals("INFO")){
+	if(  (com.length() >= 4 && com.substring(0,4).toUpperCase().equals("INFO") )
+	     || (com.length() >= 6 && com.substring(0,6).toUpperCase().equals("MANUAL")) )
+	    {
 	    manual();
+	    message = "Ready for orders.";
 	    return false;
-	}
+	    }
 
 	//TRAVEL DIRECTION: ANY, see directions list at top. Will loop and check 4 each.
-	for( int count = 0; count <= 8; count++){
+	for( int count = 0; count < 8; count++){
 	    if(com.length() >= 8
 	       && com.substring(4,com.length()).toUpperCase().equals( directions[count] )
 	       ){
