@@ -70,9 +70,9 @@ public class Woo{
 	    }
 	}
 	//generate a couple of units
-	units[ (int) (Math.random() * field.length)  ][ (int) (Math.random()*field[0].length) ] = new Infantry("one");
-	units[ (int) (Math.random() * field.length)  ][ (int) (Math.random()*field[0].length) ] = new Infantry("two");
-	units[ (int) (Math.random() * field.length)  ][ (int) (Math.random()*field[0].length) ] = new Infantry("two");
+	units[ (int) (Math.random() * field.length)  ][ (int) (Math.random()*field[0].length) ] = new Infantry(playerNames[0]);
+	units[ (int) (Math.random() * field.length)  ][ (int) (Math.random()*field[0].length) ] = new Infantry(playerNames[1]);
+	units[ (int) (Math.random() * field.length)  ][ (int) (Math.random()*field[0].length) ] = new Infantry(playerNames[1]);
 
 	// END random generation ==========================================
 
@@ -92,7 +92,7 @@ public class Woo{
 	input.nextLine();
 	clear();
 	System.out.println("\nSpecifics:\nHow to specify a particular unit: By letter and number. First comes the letter, which specifies ROW. (A-Z). Then comes number, which specifies column (0-80). All numbers are written vertically due to space issues.\nFor example, the number 54 would be written above its respective column like this:\n5\n4");
-	System.out.println("\nCommands:\nDirection: NORTH, EAST, SOUTH, WEST.\nKeep in mind commands are CASE SENSITIVE.");
+	System.out.println("\nCommands:\nDirection: NORTH, EAST, SOUTH, WEST.");
 	System.out.println("Page 2");
 
 	System.out.println("END MANUAL, <ENTER> to exit.");
@@ -146,6 +146,10 @@ public class Woo{
 		if( !(0<=x && x<field.length) || !(0<=y && y<field[0].length) || units[x][y] == null){
 		    message = "No unit detected there, sir! Your order couldn't be carried out.";
 		    return false;}
+		if( !(units[x][y].getOwner().equals(playerNames[current]))  ){
+		    message = com.substring(0,3).toUpperCase() + " is an enemy unit.";
+		    return false;
+		}
 		else{
 		    units[x][y].move(count, x, y, units);
 		    message = "Ready for orders.";
