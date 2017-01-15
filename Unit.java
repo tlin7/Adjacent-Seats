@@ -22,6 +22,23 @@ public class Unit extends Tiles{
     public int attack(Unit beingAttacked){
 	return 0;
     }
+
+    public boolean isLegalMove(int checkRow, int checkCol, Unit[][] inputArray){
+	//Check if occupied by another unit
+	if (inputArray[checkRow][checkCol] == null){
+	    return false;
+	}
+	//Check if something is being moved out of the map
+	if (checkRow==-1 ||
+	    checkCol == -1 ||
+	    checkRow > (inputArray.length-1) ||
+	    checkCol > (inputArray[0].length-1))
+	    {
+	    return false;
+	}
+	return true;
+    }
+    
     public void move(int travelDir, int row, int col, Unit[][] inputArray){
 	Unit storedUnit = inputArray[row][col];
 	inputArray[row][col]=null;
