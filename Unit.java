@@ -25,8 +25,10 @@ public class Unit extends Tiles{
 
     public boolean isLegalMove(int checkRow, int checkCol, Unit[][] inputArray){
 	//Check if occupied by another unit
-	if (inputArray[checkRow][checkCol] == null){
+	if (inputArray[checkRow][checkCol] != null){
+	    
 	    return false;
+	    
 	}
 	//Check if something is being moved out of the map
 	if (checkRow==-1 ||
@@ -34,43 +36,56 @@ public class Unit extends Tiles{
 	    checkRow > (inputArray.length-1) ||
 	    checkCol > (inputArray[0].length-1))
 	    {
-	    return false;
-	}
+	        
+		return false;
+	    }
 	return true;
     }
     
     public void move(int travelDir, int row, int col, Unit[][] inputArray){
 	Unit storedUnit = inputArray[row][col];
 	inputArray[row][col]=null;
-	if (travelDir==0){
+	if (travelDir==0 && isLegalMove(row-1,col-1,inputArray)){
 	    inputArray[row-1][col-1] =storedUnit;
+	    return;
 	}
 	//NORTH
-	else if(travelDir==1){
+	else if(travelDir==1 && isLegalMove(row-1,col,inputArray)){
 	    inputArray[row - 1][col]=storedUnit;
+	    return;
 	}
-	else if (travelDir==2){
+	else if (travelDir==2 && isLegalMove(row-1,col+1,inputArray)){
 	    inputArray[row-1][col+1]=storedUnit;
+	    return;
 	}
 	//EAST
-	else if (travelDir==3){
+	else if (travelDir==3 && isLegalMove(row,col+1,inputArray)){
 	    inputArray[row][col+1]=storedUnit;
+	    return ;
 	}
-	else if (travelDir==4){
+	else if (travelDir==4 && isLegalMove(row+1,col+1,inputArray)){
 	    inputArray[row+1][col+1]=storedUnit;
+	    return ;
 	}
 	//SOUTH
-	else if (travelDir==5){
+	else if (travelDir==5 && isLegalMove(row+1,col,inputArray)){
 	    inputArray[row+1][col]=storedUnit;
+	    return ;
 	}
-	else if (travelDir==6){
+	else if (travelDir==6 && isLegalMove(row+1,col-1,inputArray)){
 	    inputArray[row+1][col-1]=storedUnit;
+	    return ;
 	}
 	//WEST
-	else if (travelDir==7){
+	else if (travelDir==7 && isLegalMove(row,col-1,inputArray)){
 	    inputArray[row][col-1]=storedUnit;
+	    return ;
 	}
-	    
+
+	else {
+	    inputArray[row][col]=storedUnit;
+	}
+       
 	
     }
     public String getSymbol(){
