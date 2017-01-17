@@ -65,6 +65,40 @@ Noah:: Added cs1 package, worked on menu system for Woo. Implemented basic gener
 Thomas:: Polished devlog. Created subclasses for Unit and for Terrain.
 ==============================================================
 
+2017-01-13
+--------------------------------------------------------------
+Jonathan:: Update UML diagram.
+Noah:: Worked on input system. Replaced cs1.Keyboard with Scanner utility.
+Thomas:: Unit subclass updates, error fixes.
+==============================================================
+
+2017-01-14
+--------------------------------------------------------------
+Jonathan:: 
+Noah:: Worked on printing of battlefield, manual, and menu. Main loop update.
+Thomas:: Fixes t terrain so it can run with everything.
+==============================================================
+
+2017-01-15
+--------------------------------------------------------------
+Jonathan:: 
+Noah:: Move direction improvement, player messages added. Alternation of turns. Manual updates.
+Thomas:: Additional movem,ent commands added, manual updates.
+==============================================================
+
+2017-01-16
+--------------------------------------------------------------
+Jonathan:: Addition of isLegalMove to Unit.java
+Noah::
+Thomas::
+==============================================================
+
+2017-01-17
+--------------------------------------------------------------
+Jonathan:: 
+Noah::
+Thomas::
+==============================================================
 yyyy-mm-dd
 --------------------------------------------------------------
 <Member> :: <Thing member did.>
