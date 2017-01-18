@@ -24,12 +24,7 @@ public class Unit extends Tiles{
     }
 
     public boolean isLegalMove(int checkRow, int checkCol, Unit[][] inputArray){
-	//Check if occupied by another unit
-	if (inputArray[checkRow][checkCol] != null){
-	    
-	    return false;
-	    
-	}
+
 	//Check if something is being moved out of the map
 	if (checkRow==-1 ||
 	    checkCol == -1 ||
@@ -39,45 +34,53 @@ public class Unit extends Tiles{
 	        
 		return false;
 	    }
+
+	//Check if occupied by another unit
+	if (inputArray[checkRow][checkCol] != null){
+	    
+	    return false;
+	    
+	}
+
 	return true;
     }
     
     public void move(int travelDir, int row, int col, Unit[][] inputArray){
 	Unit storedUnit = inputArray[row][col];
 	inputArray[row][col]=null;
-	if (travelDir==0 && isLegalMove(row-1,col-1,inputArray)){
+	if (isLegalMove(row-1,col-1,inputArray) && travelDir==0){
 	    inputArray[row-1][col-1] =storedUnit;
 	    return;
 	}
 	//NORTH
-	else if(travelDir==1 && isLegalMove(row-1,col,inputArray)){
+	else if(isLegalMove(row-1,col,inputArray) && travelDir==1){
 	    inputArray[row - 1][col]=storedUnit;
 	    return;
 	}
-	else if (travelDir==2 && isLegalMove(row-1,col+1,inputArray)){
+	else if (isLegalMove(row-1,col+1,inputArray) && travelDir ==2){
 	    inputArray[row-1][col+1]=storedUnit;
 	    return;
 	}
 	//EAST
-	else if (travelDir==3 && isLegalMove(row,col+1,inputArray)){
+	else if (isLegalMove(row,col+1,inputArray)&& travelDir==3){
 	    inputArray[row][col+1]=storedUnit;
 	    return ;
 	}
-	else if (travelDir==4 && isLegalMove(row+1,col+1,inputArray)){
+	else if (isLegalMove(row+1,col+1,inputArray) && travelDir==4){
 	    inputArray[row+1][col+1]=storedUnit;
 	    return ;
 	}
 	//SOUTH
-	else if (travelDir==5 && isLegalMove(row+1,col,inputArray)){
+	else if (isLegalMove(row+1,col,inputArray) && travelDir==5){
 	    inputArray[row+1][col]=storedUnit;
 	    return ;
 	}
-	else if (travelDir==6 && isLegalMove(row+1,col-1,inputArray)){
+	else if (isLegalMove(row+1,col-1,inputArray) && travelDir==6){
 	    inputArray[row+1][col-1]=storedUnit;
 	    return ;
 	}
 	//WEST
-	else if (travelDir==7 && isLegalMove(row,col-1,inputArray)){
+	else if (isLegalMove(row,col-1,inputArray) && travelDir==7){
 	    inputArray[row][col-1]=storedUnit;
 	    return ;
 	}
