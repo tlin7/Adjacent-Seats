@@ -95,7 +95,7 @@ Thomas::
 
 2017-01-17
 --------------------------------------------------------------
-Jonathan:: 
+Jonathan:: Implementing isLegalMove into the move function into Unit.java & fixed the move function deleting units
 Noah::
 Thomas::
 ==============================================================
