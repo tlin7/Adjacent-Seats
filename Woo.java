@@ -69,10 +69,33 @@ public class Woo{
 		//if (randchoice == 2)
 	    }
 	}
-	//generate a couple of units
-	units[ (int) (Math.random() * field.length)  ][ (int) (Math.random()*field[0].length) ] = new Infantry(playerNames[0]);
-	units[ (int) (Math.random() * field.length)  ][ (int) (Math.random()*field[0].length) ] = new Infantry(playerNames[1]);
-	units[ (int) (Math.random() * field.length)  ][ (int) (Math.random()*field[0].length) ] = new Infantry(playerNames[1]);
+	//random generation of units
+	int unitNum = 0;
+	int unitNumE = 0;
+	while(unitNum < 4){
+	    int x = (int)(Math.random() * field.length);
+	    int y = (int)(Math.random() * field[0].length);
+	    if(	field[x][y].getSymbol() == "-"){
+		units[x][y] = new Infantry(playerNames[0]);
+		unitNum++;
+	    }
+	    else if(field[x][y].getSymbol() == "|"){
+		units[x][y] = new Navy(playerNames[0]);
+		unitNum ++;
+	    }  
+	}
+	while(unitNumE < 4){
+	    int x = (int)(Math.random() * field.length);
+	    int y = (int)(Math.random() * field[0].length);
+	    if(	field[x][y].getSymbol() == "-"){
+		units[x][y] = new Infantry(playerNames[1]);
+		unitNumE++;
+	    }
+	    else if(field[x][y].getSymbol() == "|"){
+		units[x][y] = new Navy(playerNames[1]);
+		unitNumE ++;
+	    }  
+	}
 
 	// END random generation ==========================================
 

@@ -1,8 +1,8 @@
 public class Unit extends Tiles{
-
+    protected int hp;
     protected int strength;
     protected int weapon;
-    protected String[] viableTerrain;
+    protected String viableTerrain;
     protected int attackRange;
     protected int moveRange;
     protected String name;
@@ -17,10 +17,15 @@ public class Unit extends Tiles{
 	return "";
     }
     public int getStrength(){
-	return 0;
+	return strength;
+    }
+    public void takeDmg(int dmgs){
+	hp -= dmgs;
     }
     public int attack(Unit beingAttacked){
-	return 0;
+	int damage = (int)(strength*weapon);
+	beingAttacked.takeDmg(damage);
+	return damage;
     }
 
     public boolean isLegalMove(int checkRow, int checkCol, Unit[][] inputArray){

@@ -1,9 +1,10 @@
 public class Infantry extends Unit{
     public Infantry(){
+	hp = 50;
 	strength = 10;
-	weapon = 10;
-	viableTerrain = new String[1];
-	attackRange = 10;
+	weapon = 2;
+	viableTerrain = "-";
+	attackRange = 2;
 	moveRange = 1;
 	symbol = "%";
     }

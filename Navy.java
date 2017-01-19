@@ -1,9 +1,10 @@
 public class Navy extends Unit{
     public Navy(){
+	hp = 100;
 	strength = 10;
-	weapon = 10;
-	viableTerrain = new String[1];
-	attackRange = 10;
+	weapon = 3;
+	viableTerrain = "|";
+	attackRange = 4;
 	moveRange = 1;
 	symbol = "^";
     }
