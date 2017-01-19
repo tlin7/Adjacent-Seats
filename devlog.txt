@@ -99,6 +99,13 @@ Jonathan:: Implementing isLegalMove into the move function into Unit.java & fixe
 Noah::
 Thomas::
 ==============================================================
+
+2017-01-18
+--------------------------------------------------------------
+Jonathan :: Began implementing move restrictions for Infantry.java
+<Member> :: <Thing member did.>
+<Member> :: <Thing member did.>
+==============================================================
 yyyy-mm-dd
 --------------------------------------------------------------
 <Member> :: <Thing member did.>
