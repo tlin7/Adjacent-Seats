@@ -76,35 +76,35 @@ Thomas:: Unit subclass updates, error fixes.
 --------------------------------------------------------------
 Jonathan:: 
 Noah:: Worked on printing of battlefield, manual, and menu. Main loop update.
-Thomas:: Fixes t terrain so it can run with everything.
+Thomas:: Fixes terrain so it can run with everything.
 ==============================================================
 
 2017-01-15
 --------------------------------------------------------------
 Jonathan:: 
 Noah:: Move direction improvement, player messages added. Alternation of turns. Manual updates.
-Thomas:: Additional movem,ent commands added, manual updates.
+Thomas:: Additional movement commands added, manual updates.
 ==============================================================
 
 2017-01-16
 --------------------------------------------------------------
 Jonathan:: Addition of isLegalMove to Unit.java
-Noah::
-Thomas::
+Noah:: Added Scenarios class
+Thomas:: README.md update
 ==============================================================
 
 2017-01-17
 --------------------------------------------------------------
 Jonathan:: Implementing isLegalMove into the move function into Unit.java & fixed the move function deleting units
-Noah::
-Thomas::
+Noah:: Changes to Scenarios.java
+Thomas:: New and improved README.md
 ==============================================================
 
 2017-01-18
 --------------------------------------------------------------
 Jonathan :: Began implementing move restrictions for Infantry.java
-<Member> :: <Thing member did.>
-<Member> :: <Thing member did.>
+Noah :: Updates to Scenarios.java
+Thomas :: Update Unit spawning to Woo.java
 ==============================================================
 yyyy-mm-dd
 --------------------------------------------------------------
