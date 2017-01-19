@@ -20,6 +20,7 @@ public class Scenarios{
     public static void stringTofield(String prefield, Terrain[][] field ){
 	int height = 0;
 	int width = 0;
+
 	//SET HEIGHT AND WIDTH OF NEW ARRAY BY SEARCHING
 	// FOR NEWLINES IN input string
 	for(int x = 0; x < prefield.length() ; x++){
@@ -52,8 +53,8 @@ public class Scenarios{
 	}
 
 	public static void main( String[] args){
-	    Terrain[][] field;
-	    Unit[] units;
+	    Terrain[][] field = new Terrain[5][5];
+	    Unit[][] units = new Unit[5][5];
 	    test(field, units);
 	}
 	

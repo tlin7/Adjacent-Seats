@@ -27,8 +27,9 @@ public class Woo{
 	    menu();
 	    choice = input.nextLine();
 	    if (choice.equals("1")){ start(); break;}
-	    if (choice.equals("2")){ manual(); choice = "";}
-	    if (choice.equals("3")){ return;}
+	    if (choice.equals("2")){ System.out.println("");}
+	    if (choice.equals("3")){ manual(); choice = "";}
+	    if (choice.equals("4")){ return;}
 	    else{choice = "";}
 	}
 
@@ -135,8 +136,10 @@ public class Woo{
 
     public static void menu(){
 	System.out.println("-=. AS Historical Military Simulations .=-");
-	System.out.println("Pick one: \n 1.Play Random\n 2.Manual\n 3.Exit");
+	System.out.println("Pick one: \n 1.Play Random\n 2.Pick Scenario\n 3.Manual\n 4.Exit");
     }
+
+
 
     //Gets the input string, does the appropriate action.
     //Returns TRUE iff the action should pass the turn to the other player.
