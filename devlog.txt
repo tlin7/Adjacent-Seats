@@ -106,6 +106,22 @@ Jonathan :: Began implementing move restrictions for Infantry.java
 Noah :: Updates to Scenarios.java
 Thomas :: Update Unit spawning to Woo.java
 ==============================================================
+
+2017-01-19
+--------------------------------------------------------------
+<Member> :: Implemented move restrictions to Navy.java and debugging it
+<Member> :: <Thing member did.>
+<Member> :: <Thing member did.>
+==============================================================
+
+2017-01-20
+--------------------------------------------------------------
+Jonathan Quang :: Implemented Unit.java attack method and fixed move restrictions
+<Member> :: <Thing member did.>
+<Member> :: <Thing member did.>
+==============================================================
+
+
 yyyy-mm-dd
 --------------------------------------------------------------
 <Member> :: <Thing member did.>
