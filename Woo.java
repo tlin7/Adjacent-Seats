@@ -45,7 +45,7 @@ public class Woo{
 	
     }
 
-    //intializes a new random field and some new random units
+    //Gets the player names and then generates the field.
     public static void start(boolean isRandom){
 
 	clear();
@@ -66,11 +66,14 @@ public class Woo{
 	    pickScenario();
 	}
     }
+
+    //Picks from prewritten battle scenarios
     public static void pickScenario(){
 	System.out.println(". . . ");
 	Scenarios.pick("hastings", field, units);
     }
 
+    //Randomly creates a new battle
     public static void generateRandom(){
 	
 	//generate a random field =========================================
@@ -126,8 +129,6 @@ public class Woo{
 	}
 
 	// END random generation ==========================================
-
-	
     }
 
     public static void manual(){
@@ -171,9 +172,12 @@ public class Woo{
     //Gets the input string, does the appropriate action.
     //Returns TRUE iff the action should pass the turn to the other player.
     public static boolean playerParser(String com){
+	
+	//TESTING FOR: NO COMMAND
 	if(com.length() == 0){
 	    return false;}
 
+	//TESTING FOR: MANUAL, INFO
 	if(  (com.length() >= 4 && com.substring(0,4).toUpperCase().equals("INFO") )
 	     || (com.length() >= 6 && com.substring(0,6).toUpperCase().equals("MANUAL")) )
 	    {
@@ -182,7 +186,7 @@ public class Woo{
 	    return false;
 	    }
 
-	//TRAVEL DIRECTION: ANY, see directions list at top. Will loop and check 4 each.
+	//TESTING FOR: TRAVEL DIRECTION: ANY, see directions list at top. Will loop and check 4 each.
 	for( int count = 0; count < 8; count++){
 	    if(com.length() >= 8
 	       && com.substring(4,com.length()).toUpperCase().equals( directions[count] )
@@ -204,15 +208,20 @@ public class Woo{
 		    return false;
 		}
 		else{
-		    units[x][y].move(count, x, y, units, field);
-		    message = "Ready for orders.";
-		    return true;
+		    if(units[x][y].move(count, x, y, units, field)){
+			message = "Ready for orders.";
+			return true;}
+		    else{
+			message = com.substring(0,3).toUpperCase() + " cannot move there!";
+			return false;
+		    }
 		}
 	    }
 	}
 	message = "Not too sure we understood that.";
 	return false;
 	}
+
 
     //PRINT THE BATTLESCREEN
     public static void printField(){
@@ -255,12 +264,11 @@ public class Woo{
 
     }
 
-    public static String getInfo(int row, int col, Unit[][] theUnitLayer){
-	retStr="";
-	theUnit = Unit[row][col];
+    public static String getInfo(int row, int col){
+	String retStr="";
+	Unit theUnit = units[row][col];
 	retStr+= "owned by player " + theUnit.getOwner() + "\n";
-	retStr += "strength: " + getStrength();
-	
+	retStr += "strength: " + theUnit.getStrength();
+	return retStr;
     }
-
 }
