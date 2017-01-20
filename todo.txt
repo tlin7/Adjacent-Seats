@@ -18,6 +18,5 @@ Week 2 (1/16 to 1/23):
 		-- Program Land.java and Sea.java so they can be instantiated
 		-- Program Infantry.java 
 		-- Program Navy.java
-		-- Make subclasses (IE more unit types) of Infantry.java and Navy
 	Thursday - Friday:
 		--Debugging. At this point, it's too risky to add new features
