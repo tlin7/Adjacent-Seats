@@ -1,9 +1,9 @@
 public class Unit extends Tiles{
-    protected int hp;
-    protected int strength;
+    protected int hp = 1;
+    protected int strength = 1;
     protected int weapon;
     protected String viableTerrain;
-    protected int attackRange;
+    protected int attackRange = 2;
     protected int moveRange;
     protected String name;
     protected String symbol;
@@ -22,13 +22,22 @@ public class Unit extends Tiles{
     public void takeDmg(int dmgs){
 	hp -= dmgs;
     }
-    public int attack(Unit beingAttacked){
-	int damage = (int)(strength*weapon);
-	beingAttacked.takeDmg(damage);
-	return damage;
+
+
+    //attack not done?
+    public int attack(int myRow, int myCol, int attRow, int attCol, Unit[][] inputArray){
+	int rowDelta = attRow - myRow;
+	int colDelta = attCol - myCol;
+	int distance = (int)(Math.sqrt((rowDelta * rowDelta) + (colDelta * colDelta)));
+	if (distance <= attackRange){
+	    
+
+	}
+	return 0;
+      
     }
 
-    public boolean isLegalMove(int checkRow, int checkCol, Unit[][] inputArray){
+        public boolean isLegalMove(int checkRow, int checkCol, Unit[][] inputArray, Terrain[][] inputTerrain){
 
 	//Check if something is being moved out of the map
 	if (checkRow==-1 ||
@@ -47,45 +56,49 @@ public class Unit extends Tiles{
 	    
 	}
 
+	if(inputTerrain[checkRow][checkCol] instanceof Sea){
+	    return false;
+	}
+
 	return true;
     }
-    
-    public void move(int travelDir, int row, int col, Unit[][] inputArray){
+
+    public void move(int travelDir, int row, int col, Unit[][] inputArray, Terrain[][] inputTerrain){
 	Unit storedUnit = inputArray[row][col];
 	inputArray[row][col]=null;
-	if (isLegalMove(row-1,col-1,inputArray) && travelDir==0){
+	if (isLegalMove(row-1,col-1,inputArray,inputTerrain) && travelDir==0){
 	    inputArray[row-1][col-1] =storedUnit;
 	    return;
 	}
 	//NORTH
-	else if(isLegalMove(row-1,col,inputArray) && travelDir==1){
+	else if(isLegalMove(row-1,col,inputArray,inputTerrain) && travelDir==1){
 	    inputArray[row - 1][col]=storedUnit;
 	    return;
 	}
-	else if (isLegalMove(row-1,col+1,inputArray) && travelDir ==2){
+	else if (isLegalMove(row-1,col+1,inputArray,inputTerrain) && travelDir ==2){
 	    inputArray[row-1][col+1]=storedUnit;
 	    return;
 	}
 	//EAST
-	else if (isLegalMove(row,col+1,inputArray)&& travelDir==3){
+	else if (isLegalMove(row,col+1,inputArray,inputTerrain)&& travelDir==3){
 	    inputArray[row][col+1]=storedUnit;
 	    return ;
 	}
-	else if (isLegalMove(row+1,col+1,inputArray) && travelDir==4){
+	else if (isLegalMove(row+1,col+1,inputArray,inputTerrain) && travelDir==4){
 	    inputArray[row+1][col+1]=storedUnit;
 	    return ;
 	}
 	//SOUTH
-	else if (isLegalMove(row+1,col,inputArray) && travelDir==5){
+	else if (isLegalMove(row+1,col,inputArray,inputTerrain) && travelDir==5){
 	    inputArray[row+1][col]=storedUnit;
 	    return ;
 	}
-	else if (isLegalMove(row+1,col-1,inputArray) && travelDir==6){
+	else if (isLegalMove(row+1,col-1,inputArray,inputTerrain) && travelDir==6){
 	    inputArray[row+1][col-1]=storedUnit;
 	    return ;
 	}
 	//WEST
-	else if (isLegalMove(row,col-1,inputArray) && travelDir==7){
+	else if (isLegalMove(row,col-1,inputArray,inputTerrain) && travelDir==7){
 	    inputArray[row][col-1]=storedUnit;
 	    return ;
 	}
@@ -96,6 +109,8 @@ public class Unit extends Tiles{
        
 	
     }
+	
+
     public String getSymbol(){
 	return this.symbol;
     }
