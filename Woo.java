@@ -255,4 +255,12 @@ public class Woo{
 
     }
 
+    public static String getInfo(int row, int col, Unit[][] theUnitLayer){
+	retStr="";
+	theUnit = Unit[row][col];
+	retStr+= "owned by player " + theUnit.getOwner() + "\n";
+	retStr += "strength: " + getStrength();
+	
+    }
+
 }
