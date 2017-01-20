@@ -104,21 +104,21 @@ Thomas:: New and improved README.md
 --------------------------------------------------------------
 Jonathan :: Began implementing move restrictions for Infantry.java
 Noah :: Updates to Scenarios.java
-Thomas :: Update Unit spawning to Woo.java
+Thomas :: Update Unit spawning to Woo.java. 
 ==============================================================
 
 2017-01-19
 --------------------------------------------------------------
-<Member> :: Implemented move restrictions to Navy.java and debugging it
-<Member> :: <Thing member did.>
-<Member> :: <Thing member did.>
+Jonathan :: Implemented move restrictions to Navy.java and debugging it
+Noah :: Begin to implement option for premade scenario games.
+Thomas :: Units now spawn on the correct terrain type.
 ==============================================================
 
 2017-01-20
 --------------------------------------------------------------
-Jonathan Quang :: Implemented Unit.java attack method and fixed move restrictions
-<Member> :: <Thing member did.>
-<Member> :: <Thing member did.>
+Jonathan :: Implemented Unit.java attack method and fixed move restrictions. Chnaged String owners to ints. Randomized symbols for units.
+Noah :: Unit.java move compatability in driver. Additional Secenarios support.
+Thomas :: Navy.java move restricton by terrain. Debug Unit and its subclasses. Improve randomization. Clustering of similar terrain types.
 ==============================================================
 
 
