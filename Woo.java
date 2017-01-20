@@ -76,10 +76,11 @@ public class Woo{
 	//generate a random field =========================================
 	for( int x = 0; x < field.length; x++){
 	    for( int y = 0; y < field[0].length; y++){
-		int randchoice = (int)(Math.random()*2); //<== INSERT number of choices
-		if ( randchoice == 0)
+		int randchoice = (int)(Math.random()*10); //<== INSERT number of choices
+		if ( randchoice > 3){
 		    field[x][y] = new Land();
-		if ( randchoice == 1)
+		}
+		if ( randchoice <= 3)
 		    field[x][y] = new Sea();
 		//if (randchoice == 2)
 	    }

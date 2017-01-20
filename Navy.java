@@ -6,7 +6,7 @@ public class Navy extends Unit{
 	viableTerrain = "|";
 	attackRange = 4;
 	moveRange = 1;
-	symbol = "^";
+	symbol = "$";
     }
 
     public Navy(String newOwner){
