@@ -74,7 +74,7 @@ public class Woo{
     public static void generateRandom(){
 	
 	//generate a random field =========================================
-	for( int x = 0; x < field.length; x++){
+	for( int x = 0; x < field.length-10; x++){
 	    for( int y = 0; y < field[0].length; y++){
 		int randchoice = (int)(Math.random()*10); //<== INSERT number of choices
 		if ( randchoice > 3){
@@ -85,6 +85,18 @@ public class Woo{
 		//if (randchoice == 2)
 	    }
 	}
+	for( int x = field.length-10; x < field.length; x++){
+	    for( int y = 0; y < field[0].length; y++){
+		int randchoice = (int)(Math.random()*10); //<== INSERT number of choices
+		if ( randchoice > 7){
+		    field[x][y] = new Land();
+		}
+		if ( randchoice <= 7)
+		    field[x][y] = new Sea();
+		//if (randchoice == 2)
+	    }
+	}
+	
 	//random generation of units
 	int unitNum = 0;
 	int unitNumE = 0;
