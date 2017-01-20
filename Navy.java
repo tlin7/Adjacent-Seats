@@ -1,4 +1,7 @@
 public class Navy extends Unit{
+
+    public static String[] symbolList = {"t","u","v","w","x","y","z"};
+    
     public Navy(){
 	hp = 100;
 	strength = 10;
@@ -12,6 +15,10 @@ public class Navy extends Unit{
     public Navy(int  newOwner){
 	this();
 	owner = newOwner;
+	symbol = symbolList[(int)(Math.random()*7)];
+	if (owner == 0) {
+	    symbol = symbol.toUpperCase();
+	}
     }
 
     public boolean isLegalMove(int checkRow, int checkCol, Unit[][] inputArray, Terrain[][] inputTerrain){
