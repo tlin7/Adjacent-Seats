@@ -91,11 +91,11 @@ public class Woo{
 	    int x = (int)(Math.random() * field.length);
 	    int y = (int)(Math.random() * field[0].length);
 	    if(	field[x][y].getSymbol() == "-"){
-		units[x][y] = new Infantry(playerNames[0]);
+		units[x][y] = new Infantry(0);
 		unitNum++;
 	    }
 	    else if(field[x][y].getSymbol() == "|"){
-		units[x][y] = new Navy(playerNames[0]);
+		units[x][y] = new Navy(0);
 		unitNum ++;
 	    }  
 	}
@@ -103,11 +103,11 @@ public class Woo{
 	    int x = (int)(Math.random() * field.length);
 	    int y = (int)(Math.random() * field[0].length);
 	    if(	field[x][y].getSymbol() == "-"){
-		units[x][y] = new Infantry(playerNames[1]);
+		units[x][y] = new Infantry(1);
 		unitNumE++;
 	    }
 	    else if(field[x][y].getSymbol() == "|"){
-		units[x][y] = new Navy(playerNames[1]);
+		units[x][y] = new Navy(1);
 		unitNumE ++;
 	    }  
 	}
@@ -186,7 +186,7 @@ public class Woo{
 		if( !(0<=x && x<field.length) || !(0<=y && y<field[0].length) || units[x][y] == null){
 		    message = "No unit detected there, sir! Your order couldn't be carried out.";
 		    return false;}
-		if( !(units[x][y].getOwner().equals(playerNames[current]))  ){
+		if( !(units[x][y].getOwner()==current)){
 		    message = com.substring(0,3).toUpperCase() + " is an enemy unit.";
 		    return false;
 		}

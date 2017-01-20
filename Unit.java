@@ -9,7 +9,7 @@ public class Unit extends Tiles{
     protected String symbol;
     protected int owner;
 
-    public String getOwner(){
+    public int getOwner(){
 	return owner;
     }
 
