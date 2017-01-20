@@ -28,7 +28,7 @@ public class Woo{
 	    menu();
 	    choice = input.nextLine();
 	    if (choice.equals("1")){ start(true); break;}
-	    if (choice.equals("2")){ System.out.println("");}
+	    if (choice.equals("2")){ start(false); break;}
 	    if (choice.equals("3")){ manual(); choice = "";}
 	    if (choice.equals("4")){ return;}
 	    else{choice = "";}
@@ -68,6 +68,7 @@ public class Woo{
     }
     public static void pickScenario(){
 	System.out.println(". . . ");
+	Scenarios.pick("hastings", field, units);
     }
 
     public static void generateRandom(){
