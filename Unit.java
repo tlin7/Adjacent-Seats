@@ -30,8 +30,8 @@ public class Unit extends Tiles{
 	int colDelta = attCol - myCol;
 	int distance = (int)(Math.sqrt((rowDelta * rowDelta) + (colDelta * colDelta)));
 	if (distance <= attackRange){
-	    
-
+	    int damage = this.strength;
+	    inputArray[attRow][attCol].takeDmg(damage);
 	}
 	return 0;
       
