@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 public class Woo{
@@ -26,7 +27,7 @@ public class Woo{
 	    clear();
 	    menu();
 	    choice = input.nextLine();
-	    if (choice.equals("1")){ start(); break;}
+	    if (choice.equals("1")){ start(true); break;}
 	    if (choice.equals("2")){ System.out.println("");}
 	    if (choice.equals("3")){ manual(); choice = "";}
 	    if (choice.equals("4")){ return;}
@@ -45,7 +46,7 @@ public class Woo{
     }
 
     //intializes a new random field and some new random units
-    public static void start(){
+    public static void start(boolean isRandom){
 
 	clear();
 	System.out.println("Welcome to AS Military, you have selected a RANDOM game.");
@@ -58,6 +59,18 @@ public class Woo{
 	System.out.println(playerNames[1] + " registered as second player.\n");
 	System.out.println("<enter> to proceed.");
 	
+	if(isRandom)
+	    generateRandom();
+
+	else{
+	    pickScenario();
+	}
+    }
+    public static void pickScenario(){
+	System.out.println(". . . ");
+    }
+
+    public static void generateRandom(){
 	
 	//generate a random field =========================================
 	for( int x = 0; x < field.length; x++){
@@ -177,7 +190,7 @@ public class Woo{
 		    return false;
 		}
 		else{
-		    units[x][y].move(count, x, y, units);
+		    units[x][y].move(count, x, y, units, field);
 		    message = "Ready for orders.";
 		    return true;
 		}
