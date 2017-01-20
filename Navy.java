@@ -40,48 +40,52 @@ public class Navy extends Unit{
 	return true;
     }
 
-    public void move(int travelDir, int row, int col, Unit[][] inputArray, Terrain[][] inputTerrain){
+    public boolean move(int travelDir, int row, int col, Unit[][] inputArray, Terrain[][] inputTerrain){
 	Unit storedUnit = inputArray[row][col];
 	inputArray[row][col]=null;
 	if (isLegalMove(row-1,col-1,inputArray,inputTerrain) && travelDir==0){
 	    inputArray[row-1][col-1] =storedUnit;
-	    return;
+	    return true;
 	}
 	//NORTH
 	else if(isLegalMove(row-1,col,inputArray,inputTerrain) && travelDir==1){
 	    inputArray[row - 1][col]=storedUnit;
-	    return;
+	    return true;
 	}
 	else if (isLegalMove(row-1,col+1,inputArray,inputTerrain) && travelDir ==2){
 	    inputArray[row-1][col+1]=storedUnit;
-	    return;
+	    return true;
 	}
 	//EAST
 	else if (isLegalMove(row,col+1,inputArray,inputTerrain)&& travelDir==3){
 	    inputArray[row][col+1]=storedUnit;
-	    return ;
+	    return true;
 	}
 	else if (isLegalMove(row+1,col+1,inputArray,inputTerrain) && travelDir==4){
 	    inputArray[row+1][col+1]=storedUnit;
-	    return ;
+	    return true;
 	}
 	//SOUTH
 	else if (isLegalMove(row+1,col,inputArray,inputTerrain) && travelDir==5){
 	    inputArray[row+1][col]=storedUnit;
-	    return ;
+	    return true;
 	}
 	else if (isLegalMove(row+1,col-1,inputArray,inputTerrain) && travelDir==6){
 	    inputArray[row+1][col-1]=storedUnit;
-	    return ;
+	    return true;
 	}
 	//WEST
 	else if (isLegalMove(row,col-1,inputArray,inputTerrain) && travelDir==7){
 	    inputArray[row][col-1]=storedUnit;
-	    return ;
+	    return true;
 	}
 
 	else {
 	    inputArray[row][col]=storedUnit;
+	    return false;
 	}
+	return false;
+	
     }
+
 }
