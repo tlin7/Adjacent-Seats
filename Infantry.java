@@ -84,7 +84,7 @@ public boolean move(int travelDir, int row, int col, Unit[][] inputArray, Terrai
 	    inputArray[row][col]=storedUnit;
 	    return false;
 	}
-	return false;
+
 	
     }
 

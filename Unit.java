@@ -107,7 +107,6 @@ public class Unit extends Tiles{
 	    inputArray[row][col]=storedUnit;
 	    return false;
 	}
-	return false;
 	
     }
 

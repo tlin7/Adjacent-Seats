@@ -33,7 +33,7 @@ public class Navy extends Unit{
 	    
 	}
 
-	if(inputTerrain[checkRow][checkCol] instanceof Sea){
+	if(!(inputTerrain[checkRow][checkCol] instanceof Sea)){
 	    return false;
 	}
 
@@ -84,7 +84,7 @@ public class Navy extends Unit{
 	    inputArray[row][col]=storedUnit;
 	    return false;
 	}
-	return false;
+
 	
     }
 
