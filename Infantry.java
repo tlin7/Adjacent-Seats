@@ -9,7 +9,7 @@ public class Infantry extends Unit{
 	symbol = "%";
     }
 
-    public Infantry(String newOwner){
+    public Infantry(int newOwner){
 	this();
 	owner = newOwner;
     }

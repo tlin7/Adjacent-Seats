@@ -9,7 +9,7 @@ public class Navy extends Unit{
 	symbol = "$";
     }
 
-    public Navy(String newOwner){
+    public Navy(int  newOwner){
 	this();
 	owner = newOwner;
     }
