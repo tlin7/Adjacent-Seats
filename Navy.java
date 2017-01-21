@@ -1,6 +1,6 @@
 public class Navy extends Unit{
 
-    public static String[] symbolList = {"t","u","v","w","x","y","z"};
+    //public static String[] symbolList = {"t","u","v","w","x","y","z"};
     
     public Navy(){
 	hp = 100;
@@ -9,13 +9,13 @@ public class Navy extends Unit{
 	viableTerrain = "|";
 	attackRange = 4;
 	moveRange = 1;
-	symbol = "$";
+	symbol = "y";
     }
 
     public Navy(int  newOwner){
 	this();
 	owner = newOwner;
-	symbol = symbolList[(int)(Math.random()*7)];
+	//	symbol = symbolList[(int)(Math.random()*7)];
 	if (owner == 0) {
 	    symbol = symbol.toUpperCase();
 	}

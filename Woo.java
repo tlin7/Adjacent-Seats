@@ -8,6 +8,7 @@ public class Woo{
     public static Scanner input = new Scanner(System.in);
     public static String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
+
     public static String[] playerNames = {"one","two"};
     public static int current = 0;
 
@@ -163,7 +164,10 @@ public class Woo{
 	while( passTurn == false){
 	    clear();
 	    printField();
-	    System.out.print("What is your command?\t");
+	    if( current == 0)
+		System.out.print("\033[30;46mWhat is your command?\033[0m\t");
+	    if( current == 1)
+		System.out.print("\033[30;41mWhat is your command?\033[0m\t");
 	    passTurn = playerParser( input.nextLine());
 	}
     }
@@ -198,7 +202,13 @@ public class Woo{
 	       && com.substring(4,com.length()).toUpperCase().equals( directions[count] )
 	       ){
 		int x = 0;
-		int y = Integer.parseInt(com.substring(1,3));
+		int y = 0;
+		try{
+		    y = Integer.parseInt(com.substring(1,3));}
+		catch(Exception e){
+		    message = "Not too sure we understood that.";
+		    return false;
+		}
 		for(int i = 0; i < alphabet.length(); i++){
 		    if( alphabet.substring(i,i+1).equals(com.substring(0,1).toUpperCase()) ){
 			x = i;
@@ -228,12 +238,21 @@ public class Woo{
 	//TESTING FOR: ATTACK?
 	if( com.length() >= 14 && com.substring(4,10).toUpperCase().equals("ATTACK")){
 	    int x = 0;
-	    int y = Integer.parseInt(com.substring(1,3));
+	    int y = 0;
+	    int k = 0;
+	    try{
+		y = Integer.parseInt(com.substring(1,3));
+		k = Integer.parseInt(com.substring(12,14));
+	    }
+	    catch(Exception e){
+		message = "Not too sure we understood that.";
+		return false;
+	    }
 	    for(int i = 0; i < alphabet.length(); i++){
 		if( alphabet.substring(i,i+1).equals(com.substring(0,1).toUpperCase()) ){
 		    x = i;}}
 	    int h = 0;
-	    int k = Integer.parseInt(com.substring(12,14));
+
 	    for(int i = 0; i < alphabet.length(); i++){
 		if( alphabet.substring(i,i+1).equals(com.substring(11,12).toUpperCase()) ){
 		    h = i;}}
@@ -241,7 +260,7 @@ public class Woo{
 		units[x][y] == null || units[x][y].getOwner() != current){
 		message = "No friendly unit found at " + com.substring(0,3) + " !";
 		return false;}
-	    if( !(0 <= x && x < field.length) || !(0 <= y && y < field[0].length) ||
+	    if( !(0 <= h && h < field.length) || !(0 <= k && k < field[0].length) ||
 		units[h][k] == null){
 		message = "Target not found!";
 		return false;}
@@ -249,8 +268,14 @@ public class Woo{
 		message = "Don't attack a friendly unit!";
 		return false;}
 	    else{
-		units[x][y].attack(x,y,h,k,units);
-		message = "Received a hit at " + com.substring(11,14) + "! Ready for orders.";
+		message = "";
+		if(units[x][y].attack(x,y,h,k,units))
+		    message = "Received a hit at " + com.substring(11,14) + " !";
+		if(units[h][k].getHp() <= 0){
+		    units[h][k] = null;
+		    message += "Lost a unit at " + com.substring(11,14) + " !";
+		}		
+		message +=  " Ready for orders.";
 		return true;}
 	}
     
@@ -264,6 +289,7 @@ public class Woo{
     public static void printField(){
 	int messageWidth = 74 - field[0].length;
 	String toPrint = " ";
+	
 	
 	message = "Communications for " + playerNames[current] + ": " + message;
 	//ADD THE numbering to the top of the printjob
@@ -282,8 +308,10 @@ public class Woo{
 	    for(int y = 0; y < field[0].length;y++){
 		if( units[x][y] == null){
 		    toPrint += field[x][y].getSymbol();}
-		else if( units[x][y].getOwner() == current){
-		    toPrint += " \033[31m" + units[x][y].getSymbol() + " \033[0m";}
+		else if( units[x][y].getOwner() == 1){
+		    toPrint += "\033[31m" + units[x][y].getSymbol() + "\033[0m";}
+		else if( units[x][y].getOwner() == 0){
+		    toPrint += "\033[36m" + units[x][y].getSymbol() + "\033[0m";}
 	    }
 	    if (x*messageWidth+messageWidth <= message.length() )
 		toPrint += "   " +  message.substring(x*messageWidth, x*messageWidth+messageWidth   )   ;

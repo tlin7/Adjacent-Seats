@@ -8,7 +8,10 @@ public class Unit extends Tiles{
     protected String name;
     protected String symbol;
     protected int owner;
-
+    
+    public int getHp(){
+	return hp;
+    }
     public int getOwner(){
 	return owner;
     }
@@ -25,15 +28,16 @@ public class Unit extends Tiles{
 
 
     //attack not done?
-    public int attack(int myRow, int myCol, int attRow, int attCol, Unit[][] inputArray){
+    public boolean attack(int myRow, int myCol, int attRow, int attCol, Unit[][] inputArray){
 	int rowDelta = attRow - myRow;
 	int colDelta = attCol - myCol;
 	int distance = (int)(Math.sqrt((rowDelta * rowDelta) + (colDelta * colDelta)));
 	if (distance <= attackRange){
-	    int damage = this.strength;
+	    int damage = this.strength * this.weapon;
 	    inputArray[attRow][attCol].takeDmg(damage);
+	    return true;
 	}
-	return 0;
+	return false;
       
     }
 
