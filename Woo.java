@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 public class Woo{
@@ -49,8 +48,10 @@ public class Woo{
     public static void start(boolean isRandom){
 
 	clear();
-	System.out.println("Welcome to AS Military, you have selected a RANDOM game.");
-	System.out.println("Please check the manual for any questions you might have.\n");
+	System.out.print("Welcome to AS Military, you have selected ");
+	if(isRandom){ System.out.println(" a random game.");}
+	else{ System.out.println(" to pick a scenario.");}
+	System.out.println("Please check the manual for more info ('manual' or 'info' in game)\n");
 	System.out.print("First player, please enter a name:\n::");
 	playerNames[0]=input.nextLine();
 	System.out.println(playerNames[0] + " registered as first player.");
@@ -249,6 +250,7 @@ public class Woo{
 		return false;}
 	    else{
 		units[x][y].attack(x,y,h,k,units);
+		message = "Received a hit at " + com.substring(11,14) + "! Ready for orders.";
 		return true;}
 	}
     
@@ -280,8 +282,8 @@ public class Woo{
 	    for(int y = 0; y < field[0].length;y++){
 		if( units[x][y] == null){
 		    toPrint += field[x][y].getSymbol();}
-		else{
-		    toPrint += units[x][y].getSymbol();}
+		else if( units[x][y].getOwner() == current){
+		    toPrint += " \033[31m" + units[x][y].getSymbol() + " \033[0m";}
 	    }
 	    if (x*messageWidth+messageWidth <= message.length() )
 		toPrint += "   " +  message.substring(x*messageWidth, x*messageWidth+messageWidth   )   ;
