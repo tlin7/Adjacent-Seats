@@ -10,6 +10,7 @@ public class Woo{
 
 
     public static String[] playerNames = {"one","two"};
+    public static int[] playerStrengths = {0,0};
     public static int current = 0;
 
     public static String message = "Welcome.";
@@ -66,6 +67,13 @@ public class Woo{
 
 	else{
 	    pickScenario();
+	}
+	for(int x = 0; x < units.length; x++){
+	    for( int y = 0; y < units[0].length;y++){
+		if( units[x][y] != null){
+		    playerStrengths[units[x][y].getOwner()] += 1;
+		}
+	    }
 	}
     }
 
@@ -164,6 +172,11 @@ public class Woo{
 	while( passTurn == false){
 	    clear();
 	    printField();
+	    if( playerStrengths[current] == 0){
+		clear();
+		System.out.println(" YOU HAVE BEEN DESTROYED ");
+		return;
+	    }
 	    if( current == 0)
 		System.out.print("\033[30;46mWhat is your command?\033[0m\t");
 	    if( current == 1)
@@ -173,7 +186,17 @@ public class Woo{
     }
 
     public static void menu(){
+	System.out.println("     ____       ________                  ");
+	System.out.println("    /    |     /        |                 ");
+	System.out.println("    | ._  |    |   ____|                  ");
+	System.out.println("   || |_|  |    |      |                  ");
+	System.out.println("   |   ___  |    |__    |                 ");
+	System.out.println("  ||  ||  |  |______|    |    ========    ");
+	System.out.println("  |   //   |  |          |===========     ");
+	System.out.println("  |__//     |__|_________/==========      ");
+	System.out.println("===========================================\n");
 	System.out.println("-=. AS Historical Military Simulations .=-");
+	System.out.println("Intended for 80 x 24 display.");
 	System.out.println("Pick one: \n 1.Play Random\n 2.Pick Scenario\n 3.Manual\n 4.Exit");
     }
 
@@ -182,7 +205,7 @@ public class Woo{
     //Gets the input string, does the appropriate action.
     //Returns TRUE iff the action should pass the turn to the other player.
     public static boolean playerParser(String com){
-	
+	message = "";
 	//TESTING FOR: NO COMMAND
 	if(com.length() == 0){
 	    return false;}
@@ -272,13 +295,16 @@ public class Woo{
 		if(units[x][y].attack(x,y,h,k,units))
 		    message = "Received a hit at " + com.substring(11,14) + " !";
 		if(units[h][k].getHp() <= 0){
+		    playerStrengths[units[h][k].getOwner()] -= 1;
 		    units[h][k] = null;
 		    message += "Lost a unit at " + com.substring(11,14) + " !";
 		}		
 		message +=  " Ready for orders.";
 		return true;}
 	}
-    
+	if(com.toUpperCase().equals("SKIP")){
+	    message = "Ready for orders.";
+	    return true;}
 
 	message = "Not too sure we understood that.";
 	return false;
