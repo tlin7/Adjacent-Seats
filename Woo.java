@@ -223,9 +223,39 @@ public class Woo{
 		}
 	    }
 	}
+
+	//TESTING FOR: ATTACK?
+	if( com.length() >= 14 && com.substring(4,10).toUpperCase().equals("ATTACK")){
+	    int x = 0;
+	    int y = Integer.parseInt(com.substring(1,3));
+	    for(int i = 0; i < alphabet.length(); i++){
+		if( alphabet.substring(i,i+1).equals(com.substring(0,1).toUpperCase()) ){
+		    x = i;}}
+	    int h = 0;
+	    int k = Integer.parseInt(com.substring(12,14));
+	    for(int i = 0; i < alphabet.length(); i++){
+		if( alphabet.substring(i,i+1).equals(com.substring(11,12).toUpperCase()) ){
+		    h = i;}}
+	    if( !(0 <= x && x < field.length) || !(0 <= y && y < field[0].length) ||
+		units[x][y] == null || units[x][y].getOwner() != current){
+		message = "No friendly unit found at " + com.substring(0,3) + " !";
+		return false;}
+	    if( !(0 <= x && x < field.length) || !(0 <= y && y < field[0].length) ||
+		units[h][k] == null){
+		message = "Target not found!";
+		return false;}
+	    if( units[h][k].getOwner() == current){
+		message = "Don't attack a friendly unit!";
+		return false;}
+	    else{
+		units[x][y].attack(x,y,h,k,units);
+		return true;}
+	}
+    
+
 	message = "Not too sure we understood that.";
 	return false;
-	}
+    }
 
 
     //PRINT THE BATTLESCREEN
