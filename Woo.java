@@ -165,7 +165,10 @@ public class Woo{
 	input.nextLine();
 	clear();
 	System.out.println("\nSpecifics:\nHow to specify a particular unit: By letter and number. First comes the letter, which specifies ROW. (A-Z). Then comes number, which specifies column (0-80). All numbers are written vertically due to space issues.\nFor example, the number 54 would be written above its respective column like this:\n5\n4");
-	System.out.println("\nCommands:\nDirection: NORTH, EAST, SOUTH, WEST.");
+	System.out.println("The letters that come before s represent the infantry units. The letters that come after s are navy units.\nInfantry units can only move on land, represented by a -. Navy units can only move on water, represented by |.");
+	System.out.println("Player 1's units are blue. Player 2's are red. ");
+	System.out.println("\nTo Attack: Type in <your attacking unit coordinates> ATTACK <unit you want to attack's coordinates>.\nExample: A16 ATTCK A17");
+	System.out.println("\nCommands:\nDirection: NORTH, NORTHEAST, EAST, SOUTHEAST, SOUTH, SOUTHWEST, WEST, NORTHWEST.\nAttacking: ATTACK\nMISC: SKIP, INFO");
 	System.out.println("Page 2");
 
 	System.out.println("END MANUAL, <ENTER> to exit.");
