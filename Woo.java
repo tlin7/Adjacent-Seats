@@ -36,8 +36,14 @@ public class Woo{
 	}
 
 	int turns = 0;
+
 	while(true){
 	    current = turns % 2;
+	    if( playerStrengths[current] == 0){
+		clear();
+		System.out.println(" YOU HAVE BEEN DESTROYED ");
+		return;
+	    }
 	    runTurn();
 	    turns++;
 	}
@@ -172,11 +178,7 @@ public class Woo{
 	while( passTurn == false){
 	    clear();
 	    printField();
-	    if( playerStrengths[current] == 0){
-		clear();
-		System.out.println(" YOU HAVE BEEN DESTROYED ");
-		return;
-	    }
+
 	    if( current == 0)
 		System.out.print("\033[30;46mWhat is your command?\033[0m\t");
 	    if( current == 1)

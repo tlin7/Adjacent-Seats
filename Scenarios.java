@@ -50,6 +50,19 @@ public class Scenarios{
 		field[y][x % width] = new Land();
 	    //add more conditionals
 	}}
+    
+    public static Unit unitPicker(String type, int owner){
+	Unit retUnit;
+	if(type == "Infantry"){
+	    retUnit = new Infantry(owner);}
+	else if(type == "Navy"){
+	    retUnit = new Navy(owner);}
+	else{
+	    retUnit = new Infantry(owner);}
+	
+	return retUnit;
+    }
+
 
     public static boolean pick(String scen, Terrain[][] field, Unit[][] units){
 	//	String prefield = "-----\n-----\n-----\n-----\n-----";
@@ -62,7 +75,10 @@ public class Scenarios{
 	try{
 	    input = new BufferedReader(new FileReader(scen));
 	    while( (inputline = input.readLine()) != null){
-		
+		if(inputline.substring(0,5).toUpperCase().equals("UNITS")){
+		    units[Integer.parseInt(inputline.substring(6,8))]
+			[Integer.parseInt(inputline.substring(9,11))] = unitPicker(inputline.substring(14),Integer.parseInt(inputline.substring(12,13)));
+		}
 		prefield += inputline + "\n";
 	    }
 		
