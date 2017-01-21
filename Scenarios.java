@@ -48,6 +48,8 @@ public class Scenarios{
 		y+=1;
 	    if( prefield.substring(x,x+1).equals("-") ) // - IS LAND"
 		field[y][x % width] = new Land();
+	    if( prefield.substring(x,x+1).equals("|") ) // | IS Sea"
+		field[y][x % width] = new Sea();
 	    //add more conditionals
 	}}
     
