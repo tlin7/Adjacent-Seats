@@ -1,6 +1,6 @@
 public class Infantry extends Unit{
 
-    public static String[] symbolList={"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","s"};
+    ///public static String[] symbolList={"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","s"};
 
     
     public Infantry(){
@@ -10,13 +10,13 @@ public class Infantry extends Unit{
 	viableTerrain = "-";
 	attackRange = 2;
 	moveRange = 1;
-	symbol = "%";
+	symbol = "z";
     }
 
     public Infantry(int newOwner){
 	this();
 	owner = newOwner;
-	symbol = symbolList[(int)(Math.random()*19)];
+	//	symbol = symbolList[(int)(Math.random()*19)];
 	if (owner == 0){
 	    symbol = symbol.toUpperCase();
 	}

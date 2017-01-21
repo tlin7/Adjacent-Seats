@@ -69,8 +69,13 @@ public class Woo{
 
     //Picks from prewritten battle scenarios
     public static void pickScenario(){
+	/*	for( Terrain[] terrainRow: field){
+	    for( Terrain terrainSquare: terrainRow){
+		terrainSquare = new Land();
+	    }
+	    }*/
 	System.out.println(". . . ");
-	Scenarios.pick("hastings", field, units);
+	Scenarios.pick("testing.txt", field, units);
     }
 
     //Randomly creates a new battle
