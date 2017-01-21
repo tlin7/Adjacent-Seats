@@ -91,12 +91,13 @@ public class Woo{
 	    }
 	    }*/
 	String[] scenarioList = 
-	    {"Singlecombat.txt" };
+	    {"Singlecombat.txt", "Guadalcanal.txt" };
 	String scen = "";
 	while(scen.equals("")){
 	    clear();
 	    System.out.println("Select a scenario from below:\n");
 	    System.out.println("0 .Single Combat    -- One on one");
+	    System.out.println("1 .Guadalcanal      -- Allies vs Japanese, 1942");
 	    
 	    String inputLine = input.nextLine();
 
