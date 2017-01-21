@@ -90,8 +90,28 @@ public class Woo{
 		terrainSquare = new Land();
 	    }
 	    }*/
-	System.out.println(". . . ");
-	Scenarios.pick("testing.txt", field, units);
+	String[] scenarioList = 
+	    {"Singlecombat.txt" };
+	String scen = "";
+	while(scen.equals("")){
+	    clear();
+	    System.out.println("Select a scenario from below:\n");
+	    System.out.println("0 .Single Combat    -- One on one");
+	    
+	    String inputLine = input.nextLine();
+
+	    int index = 0;
+	    
+	    try{
+		index = Integer.parseInt(inputLine);
+	    }catch(Exception e){}
+
+	    if (0 <= index && index < scenarioList.length){
+		scen = scenarioList[index];
+	    }
+	}
+	Scenarios.pick(scen, field, units);
+	return;
     }
 
     //Randomly creates a new battle
