@@ -10,25 +10,39 @@ Turn based military sim
 ------------------------------------------
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-wow we so BOSS bc...
+-We were having issues synching our commits to github, but we resolved this
+ with more team communication.
+-The game was hard on the eyes. The symbols for the terrain were visually
+ confusing in that it was hard to find the coordinates of a unit
+ This was resolved by using dashes and vertical slashes.
+-The game was also hard to test for numerous reasons, one of which was the
+ issue above. Another reason was that both player's units were both visually
+ similar. This was resolved by making one player blue with capitalized letters
+ and the other player have red characters with lowercase letters.
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-blah blah pesky bug...
-maybe some of these will move into the Obs.Ovrcm section...
+-The end game often results in one player running away
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-wow! oo!...
+-We learned how to do colors in terminal. It made the game much easier
+ on the eyes.
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-we changed ___ to ___ bc...
+-We decided to scrap the idea of having different types of infantry and navy
+ because the project was growing too large in scale.	
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-tales of wisdom gained...
-||||||||||||||||||||||||||||||||||||||||||
+-Teamwork makes the dream work!
+-It is important that everyone on the team has a rough idea of
+ what is being done that day.
+-The team's goals have to match the deadline. It isn't a good idea to
+ do too much in a short amount of time.
+-Just because an abstract class doesn't seem useful now doesn't mean it
+ won't be useful later. 
 
 
 
