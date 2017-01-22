@@ -5,19 +5,10 @@ public class Scenarios{
     //This is Scenarios.java, the class with all the premade
     //scenarios
     
-    //for now, each scenario is just hard coded in this file.
-
-    /*
-    public static void <battlename>(String[] playerNames, 
-    Terrain[][] field, Unit[][] units){
-				
-    String 
-
-    //Area to add terrain, units
-
-
-    }
-    */
+    //Scenarios are read in from a file, which is structured with
+    //-the battlefield terrain in a grid (as you would see it printed)
+    //-a list of units and their types and locations
+    //-descriptive statements to be printed.
 
     public static void stringTofield(String prefield, Terrain[][] field ){
 
@@ -26,7 +17,7 @@ public class Scenarios{
 	
 	//SET HEIGHT AND WIDTH OF NEW ARRAY BY SEARCHING
 	// FOR NEWLINES IN input string
-	System.out.println(prefield);
+
 	for(int x = 0; x < prefield.length() ; x++){
 	    if ( prefield.substring(x,x+1).equals("\n")){
 		height += 1;
@@ -55,12 +46,15 @@ public class Scenarios{
     
     public static Unit unitPicker(String type, int owner){
 	Unit retUnit;
-	System.out.print(type);
-	System.out.println("//");
+
 	if(type.equals("Infantry")){
 	    retUnit = new Infantry(owner);}
 	else if((type.equals("Navy"))){
 	    retUnit = new Navy(owner);}
+	else if((type.equals("Artillery"))){
+	    retUnit = new Artillery(owner);}
+	else if((type.equals("Sailship"))){
+	    retUnit = new Sailship(owner);}
 	else{
 	    retUnit = null;
 	}	
@@ -83,7 +77,11 @@ public class Scenarios{
 		    units[Integer.parseInt(inputline.substring(6,8))]
 			[Integer.parseInt(inputline.substring(9,11))] = unitPicker(inputline.substring(14),Integer.parseInt(inputline.substring(12,13)));
 		}
-		prefield += inputline + "\n";
+		if(inputline.substring(0,5).toUpperCase().equals("PRINT")){
+		    System.out.println(inputline.substring(5));
+		}
+		else
+		    prefield += inputline + "\n";
 	    }
 		
 	}

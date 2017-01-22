@@ -28,3 +28,16 @@ UNITS 04 32 0 Navy
 UNITS 04 33 0 Navy
 UNITS 11 38 0 Infantry
 UNITS 11 37 0 Infantry
+PRINT Guadalcanal Island : 1942.
+PRINT Codename: Operation Watchtower
+PRINT ... 
+PRINT One year ago, the Japanese empire struck a crippling blow
+PRINT against the US Navy at Pearl Harbor.
+PRINT ...
+PRINT Hungry for resources, the Imperial Navy sweeps across
+PRINT the Pacific theatre, reaching past Papau New Guinea all the way
+PRINT to Guadalcanal in the Solomon Islands - where they will be able
+PRINT to disrupt Allied supply routes.
+PRINT ...
+PRINT A fleet sets out for the destruction of the Japanese occupants on
+PRINT the island ...

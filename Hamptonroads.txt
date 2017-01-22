@@ -1,0 +1,37 @@
+|||||||----------------------------------|||||||||
+||||||||--------------------------------||||||||||
+|||||||||------------------------------|||||||||||
+||||||||||----------------------------||||||||||||
+||||||||||||------------------------||||||||||||||
+|||||||||||||||------------------|||||||||||||||||
+|||||||||||||||||--------------|||||||||||||||||||
+||||||||||||||||||||--------||||||||||||||--------
+||||||||||||||||||||||----|||||||||||||||---------
+||||||||||||||||||||||||||||||||||||||||----------
+||||||||||||||||||||||||||||||||||||||------------
+-----|||||||||||||||||||||||||||||||||------------
+-------||||||||||||||||||||||||||||||-------------
+----|||||||||||||||||||||||||||||||||||-----------
+------||||||||||||||||||||||||||||||||||||--------
+----|||||||||||||||||||||||||||||||||||||||||-----
+--||||||||||||----------------||||||||||||||------
+|||||||||-----------------------------||||||------
+||||||||--------------------------------||||||----
+||||||--------------------------------------|||---
+UNITS 17 40 1 Navy
+UNITS 11 22 1 Sailship
+UNITS 10 27 1 Sailship
+UNITS 07 35 1 Sailship
+UNITS 10 28 0 Navy
+PRINT Hampton Roads, 1862
+PRINT ...
+PRINT The Union forces are bleeding under the might of
+PRINT the South. Inspired by the European shipwrights, the Confederacy
+PRINT begins to construct a wave of abstract new ships - subs, floating
+PRINT batteries, and most importantly...
+PRINT THE IRONCLAD
+PRINT ...
+PRINT The development of their new superweapon is not unnoticed, and to
+PRINT counter the South's new "CSS Virginia", the "USS Monitor" is launched
+PRINT and sails to Hampton Roads, where the Virginia has already
+PRINT been wreaking havoc among Union sailing frigates.

@@ -20,3 +20,13 @@
 --------------------------------------------------
 UNITS 10 20 1 Infantry
 UNITS 10 26 0 Infantry
+PRINT Single Combat:
+PRINT A simple training exercise
+PRINT Each player takes control of just one unit
+PRINT A quick, easy battle may be played in order to
+PRINT become familiar with the controls and the
+PRINT abilities of each unit.
+PRINT   
+PRINT Then we suggest that you try out another scenario,
+PRINT like the riveting battle of GUADALCANAL.
+PRINT Or try your hand at a RANDOM battle!
