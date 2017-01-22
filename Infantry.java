@@ -1,6 +1,6 @@
 public class Infantry extends Unit{
 
-    public static String[] symbolList={"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","s"};
+    //public static String[] symbolList={"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","s"};
 
     
     public Infantry(){

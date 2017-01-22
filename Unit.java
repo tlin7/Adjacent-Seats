@@ -26,8 +26,7 @@ public class Unit extends Tiles{
 	hp -= dmgs;
     }
 
-
-    //attack not done?
+    //attack 
     public boolean attack(int myRow, int myCol, int attRow, int attCol, Unit[][] inputArray){
 	int rowDelta = attRow - myRow;
 	int colDelta = attCol - myCol;
@@ -41,7 +40,7 @@ public class Unit extends Tiles{
       
     }
 
-        public boolean isLegalMove(int checkRow, int checkCol, Unit[][] inputArray, Terrain[][] inputTerrain){
+    public boolean isLegalMove(int checkRow, int checkCol, Unit[][] inputArray, Terrain[][] inputTerrain){
 
 	//Check if something is being moved out of the map
 	if (checkRow==-1 ||
@@ -113,20 +112,7 @@ public class Unit extends Tiles{
 	}
 	
     }
-
-	
-
     public String getSymbol(){
 	return this.symbol;
     }
-
-    public static void main(String[] args){
-	Unit theUnit = new Unit();
-	System.out.println(theUnit.getSymbol());
-	
-    }
-
-
-
-
 }
