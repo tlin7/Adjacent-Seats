@@ -55,13 +55,15 @@ public class Scenarios{
     
     public static Unit unitPicker(String type, int owner){
 	Unit retUnit;
-	if(type == "Infantry"){
+	System.out.print(type);
+	System.out.println("//");
+	if(type.equals("Infantry")){
 	    retUnit = new Infantry(owner);}
-	else if(type == "Navy"){
+	else if((type.equals("Navy"))){
 	    retUnit = new Navy(owner);}
 	else{
-	    retUnit = new Infantry(owner);}
-	
+	    retUnit = null;
+	}	
 	return retUnit;
     }
 

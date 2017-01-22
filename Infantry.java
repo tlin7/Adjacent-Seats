@@ -16,7 +16,7 @@ public class Infantry extends Unit{
     public Infantry(int newOwner){
 	this();
 	owner = newOwner;
-	symbol = symbolList[(int)(Math.random()*19)];
+	//symbol = symbolList[(int)(Math.random()*19)];
 	if (owner == 0){
 	    symbol = symbol.toUpperCase();
 	}
