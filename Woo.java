@@ -189,10 +189,10 @@ public class Woo{
 	input.nextLine();
 	clear();
 	System.out.println("\nSpecifics:\nHow to specify a particular unit: By letter and number. First comes the letter, which specifies ROW. (A-Z). Then comes number, which specifies column (0-80). All numbers are written vertically due to space issues.\nFor example, the number 54 would be written above its respective column like this:\n5\n4");
-	System.out.println("The letters that come before s represent the infantry units. The letters that come after s are navy units. Infantry units can only move on land, represented by a -. Navy units can only move on water, represented by |.");
+	System.out.println("Infantry is represented by a z. Navy is represented by a y. Some scenarios have special units, such as the weaker navy Sailship(%) and Artillery (#). Infantry and artilery units can only move on land, represented by a -. Navy units can only move on water, represented by |.");
 	System.out.println("Player 1's units are blue. Player 2's are red. ");
-	System.out.println("To Attack: Type in <your attacking unit coordinates> ATTACK <unit you want to attack's coordinates>.\nExample: A16 ATTACK A17");
-	System.out.println("Infantry units can only attack enemies up to 2 tiles away from them. A navy unit can attack as far as 4 tiles away. If your attack is out of range it will still count as a turn taken.");
+	System.out.println("To Attack: Type in <your attacking unit coordinates> ATTACK <unit you want to attack's coordinates>. For example: A16 ATTACK A17");
+	System.out.println("Infantry units can only attack enemies up to 2 tiles away from them. A navy unit can attack as far as 4 tiles away. Artiller can attack from 6 tiles away. If your attack is out of range it will still count as a turn taken.");
 	System.out.println("Commands:\nDirection: NORTH, NORTHEAST, EAST, SOUTHEAST, SOUTH, SOUTHWEST, WEST, NORTHWEST.\nAttacking: ATTACK\nMISC: SKIP, INFO");
 	System.out.println("Page 2, END MANUAL, <ENTER> to exit.");
 	input.nextLine();

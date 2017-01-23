@@ -22,19 +22,19 @@ OBSTACLES OVERCOME
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
--The end game often results in one player running away
+-The end game often results in one player running away to avoid defeat.
 -The game only works in linux terminals because of the coloring method
  we used.
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
--We learned how to do colors in terminal. It made the game much easier
- on the eyes.
+-We learned how to add colors in terminal. It made the game much cleaner
+ and the units much easier to distinguish. 
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 -We decided to scrap the idea of having different types of infantry and navy
- because the project was growing too large in scale.	
+ because the project was growing too large in scale. Instead we limited it to just a few new types for specific scenarios.
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -137,7 +137,19 @@ Noah :: Unit.java move compatability in driver. Additional Secenarios support.
 Thomas :: Navy.java move restricton by terrain. Debug Unit and its subclasses. Improve randomization. Clustering of similar terrain types.
 ==============================================================
 
+2017-01-21
+--------------------------------------------------------------
+Jonathan :: Unit.java updates with some comments.
+Noah :: Another scenario added, with some debugging.
+Thomas :: Flowchart and UML updates. Removal of unnecessary code. 
+==============================================================
 
+2017-01-22
+--------------------------------------------------------------
+Jonathan :: devlog.txt updates.
+Noah :: Added another scenario, and some new unit types.
+Thomas :: UML update, further cleaning of code, devlog updates.
+==============================================================
 yyyy-mm-dd
 --------------------------------------------------------------
 <Member> :: <Thing member did.>
