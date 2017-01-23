@@ -47,7 +47,7 @@ Infantry units are represented by a z. Navy units are represented by a y. Infant
 
 Player 1's units are blue. Player 2's are red.
 
-To Attack: Type in <your attacking unit coordinates> ATTACK <unit you want to attack's coordinates>.
+To Attack: Type in -your attacking unit coordinates- ATTACK -unit you want to attack's coordinates-.
 
 Example: A16 ATTACK A17
 
