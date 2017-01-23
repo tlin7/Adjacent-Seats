@@ -4,6 +4,7 @@ public class Woo{
 
     //contains the FIELD of TERRAIN tiles
     public static Terrain[][] field;
+    //contains the Unit tiles
     public static Unit[][] units;
     public static Scanner input = new Scanner(System.in);
     public static String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -290,7 +291,7 @@ public class Woo{
 	    }
 	}
 
-	//TESTING FOR: ATTACK?
+	//Attack
 	if( com.length() >= 14 && com.substring(4,10).toUpperCase().equals("ATTACK")){
 	    int x = 0;
 	    int y = 0;
@@ -383,7 +384,7 @@ public class Woo{
 	}
 	System.out.println(toPrint);
     }
-
+    //clears out terminal with newlines
     public static void clear(){
 	System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 

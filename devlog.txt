@@ -33,7 +33,7 @@ COOL STUFF LEARNED
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
--We decided to scrap the idea of having different types of infantry and navy
+-We decided to scrap the idea of having 6 different types of infantry and navy
  because the project was growing too large in scale. Instead we limited it to just a few new types for specific scenarios.
 
 LESSONS LEARNED
