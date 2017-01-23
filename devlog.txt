@@ -30,6 +30,7 @@ COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 -We learned how to add colors in terminal. It made the game much cleaner
  and the units much easier to distinguish. 
+-We learned how to read input from files. This helped expedite the process of creating historical scenarios, since all scenario information is stored in .txt files.
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
