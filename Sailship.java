@@ -3,12 +3,10 @@ public class Sailship extends Navy{
 	super();
 	hp = 40;
 	strength = 5;
-	symbol = "%";
     }
     
     public Sailship(int newOwner){
 	this();
 	owner = newOwner;}
-
 
 }

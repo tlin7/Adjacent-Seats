@@ -1,0 +1,47 @@
+-------------||-----------------------------------
+----------|||-------------------------------------
+-------|||----------------------------------------
+------|||-----------------------------------------
+----||--------------------------------------------
+---|||--------------------------------------------
+--|||---------------------------------------------
+-|||----------------------------------------------
+|||-----------------------------------------------
+--------------------------------------------------
+--------------------------------------------------
+--------------------------------------------------
+--------------------------------------------------
+--------------------------------------------------
+--------------------------------------------------
+--------------------------------------------------
+--------------------------------------------------
+--------------------------------------------------
+--------------------------------------------------
+--------------------------------------------------
+UNITS 17 42 1 Infantry
+UNITS 15 42 1 Infantry
+UNITS 13 42 1 Infantry
+UNITS 11 42 1 Infantry
+UNITS 09 42 1 Infantry
+UNITS 07 42 1 Infantry
+UNITS 16 39 1 Artillery
+UNITS 14 39 1 Artillery
+UNITS 12 39 1 Artillery
+UNITS 15 17 0 Artillery
+UNITS 13 17 0 Artillery
+UNITS 11 17 0 Artillery
+UNITS 02 02 0 Infantry
+UNTIS 03 03 0 Infantry
+PRINT Bull Run, 1861.
+PRINT ...
+PRINT At the very beginning of the Civil War,
+PRINT the great battle at Bull Run was fought. Key to
+PRINT the conflict was the Manassas railroad. Ultimately
+PRINT a victory for the Confederacy, Bull Run shocked both
+PRINT sides and set the tone for four years of bloodshed.
+PRINT Late in the day, the Bull Run conflict became centered
+PRINT around Henry House, where Stonewall Jackson earned his name.
+PRINT ...
+PRINT One player will take charge of the Griffin-Rickets
+PRINT Union artillery. The other will play as Jackson himself.
+PRINT The fate and future of the Union hang in the balance!

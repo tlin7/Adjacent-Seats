@@ -42,6 +42,8 @@ public class Woo{
 	    if( playerStrengths[current] == 0){
 		clear();
 		System.out.println(" YOU HAVE BEEN DESTROYED ");
+		System.out.println("\nThe armies of " + playerNames[current]
+				   + " fought long and nobly, but were vanquished!");
 		return;
 	    }
 	    runTurn();
@@ -91,14 +93,16 @@ public class Woo{
 	    }
 	    }*/
 	String[] scenarioList = 
-	    {"Singlecombat.txt", "Guadalcanal.txt", "Hamptonroads.txt" };
+	    {"Singlecombat.txt", "Guadalcanal.txt", "Hamptonroads.txt", "Henryhill.txt", "Siege.txt" };
 	String scen = "";
 	while(scen.equals("")){
 	    clear();
 	    System.out.println("Select a scenario from below:\n");
-	    System.out.println("0 .Single Combat    -- One on one");
-	    System.out.println("1 .Guadalcanal      -- Allies vs Japanese Empire, 1942");
-	    System.out.println("2 .Hampton Roads    -- Clash of the Ironclads, Civil War 1862");
+	    System.out.println("0 .Single Combat       -- One on one");
+	    System.out.println("1 .Guadalcanal         -- Allies vs Japanese Empire, 1942");
+	    System.out.println("2 .Hampton Roads       -- Clash of the Ironclads, Civil War 1862");
+	    System.out.println("3 .Bull Run-Henry hill -- First major Civil War conflict");
+	    System.out.println("4 .Fortress Siege      -- Classic Fortress siege");
 	    
 	    String inputLine = input.nextLine();
 
@@ -189,7 +193,7 @@ public class Woo{
 	input.nextLine();
 	clear();
 	System.out.println("\nSpecifics:\nHow to specify a particular unit: By letter and number. First comes the letter, which specifies ROW. (A-Z). Then comes number, which specifies column (0-80). All numbers are written vertically due to space issues.\nFor example, the number 54 would be written above its respective column like this:\n5\n4");
-	System.out.println("Infantry is represented by a z. Navy is represented by a y. Some scenarios have special units, such as the weaker navy Sailship(%) and Artillery (#). Infantry and artilery units can only move on land, represented by a -. Navy units can only move on water, represented by |.");
+	System.out.println("Infantry is represented by a z. Navy is represented by a y. Some scenarios have special units, such as the weaker navy Sailship and Artillery (#). Infantry and artilery units can only move on land, represented by a -. Navy units can only move on water, represented by |.");
 	System.out.println("Player 1's units are blue. Player 2's are red. ");
 	System.out.println("To Attack: Type in <your attacking unit coordinates> ATTACK <unit you want to attack's coordinates>. For example: A16 ATTACK A17");
 	System.out.println("Infantry units can only attack enemies up to 2 tiles away from them. A navy unit can attack as far as 4 tiles away. Artiller can attack from 6 tiles away. If your attack is out of range it will still count as a turn taken.");
@@ -330,6 +334,8 @@ public class Woo{
 		message +=  " Ready for orders.";
 		return true;}
 	}
+
+	//TESTING FOR SKIP
 	if(com.toUpperCase().equals("SKIP")){
 	    message = "Ready for orders.";
 	    return true;}

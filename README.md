@@ -43,7 +43,7 @@ How to specify a particular unit: By letter and number. First comes the letter, 
 
 4
 
-Infantry units are represented by a z. Navy units are represented by a y. Infantry units can only move on land, represented by a -. Navy units can only move on water, represented by |. Special scenarios have some other units, such as the weaker Navy unit, Sailship(%) and Artillery (#).
+Infantry units are represented by a z. Navy units are represented by a y. Infantry units can only move on land, represented by a -. Navy units can only move on water, represented by |. Special scenarios have some other units, such as the weaker Navy unit, Sailship and Artillery (#).
 
 Player 1's units are blue. Player 2's are red.
 
