@@ -26,14 +26,7 @@ public class Unit extends Tiles{
 	hp -= dmgs;
     }
 
-    //returns a string summing up the meaningful info of a unit.
-    public String retInfo(){
-	String retStr="";
-	retStr += "HP: " + this.hp + "\n";
-	retStr += "Strength: " + this.strength + "\n";
-	retStr += "attackRange: " + this.attackRange + "\n";
-	return retStr;
-    }
+
 
     //attack 
     public boolean attack(int myRow, int myCol, int attRow, int attCol, Unit[][] inputArray){
