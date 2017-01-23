@@ -1,7 +1,4 @@
 public class Infantry extends Unit{
-
-    //public static String[] symbolList={"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","s"};
-
     
     public Infantry(){
 	hp = 50;
@@ -12,7 +9,7 @@ public class Infantry extends Unit{
 	moveRange = 1;
 	symbol = "z";
     }
-
+    //set Owner, aka player 1 or player 2.
     public Infantry(int newOwner){
 	this();
 	owner = newOwner;
@@ -50,7 +47,7 @@ public class Infantry extends Unit{
 	return true;
     }
 
-public boolean move(int travelDir, int row, int col, Unit[][] inputArray, Terrain[][] inputTerrain){
+    public boolean move(int travelDir, int row, int col, Unit[][] inputArray, Terrain[][] inputTerrain){
 	Unit storedUnit = inputArray[row][col];
 	inputArray[row][col]=null;
 	if (isLegalMove(row-1,col-1,inputArray,inputTerrain) && travelDir==0){
@@ -94,8 +91,5 @@ public boolean move(int travelDir, int row, int col, Unit[][] inputArray, Terrai
 	    inputArray[row][col]=storedUnit;
 	    return false;
 	}
-
-	
     }
-
 }

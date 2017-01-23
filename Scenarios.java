@@ -92,11 +92,4 @@ public class Scenarios{
 	stringTofield(prefield, field );
 	return true;
     }
-
-    public static void main( String[] args){
-	Terrain[][] field = new Terrain[5][5];
-	Unit[][] units = new Unit[5][5];
-	pick("testing.txt",field, units);
-    }
-
 }
